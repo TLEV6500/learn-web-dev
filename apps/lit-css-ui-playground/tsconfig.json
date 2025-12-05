@@ -1,0 +1,4 @@
+{
+  "extends": "@tlev/typescript-config/lit.json",
+  "include": ["src"]
+}

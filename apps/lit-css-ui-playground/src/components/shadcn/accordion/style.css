@@ -1,0 +1,37 @@
+@import "../../common.css";
+
+:host {
+  display: block;
+  background-color: white;
+  color: black;
+}
+
+.accordion-container {
+  padding-inline: 1rem;
+}
+
+details {
+  &:not(:last-child)::after {
+    display: block;
+    position: relative;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  & > :last-child {
+    margin-bottom: 0.8rem;
+  }
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+}
+
+summary::marker {
+  content: "";
+}

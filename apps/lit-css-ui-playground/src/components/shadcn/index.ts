@@ -1,0 +1,1 @@
+export { ShadcnAccordion } from "./accordion/accordion";

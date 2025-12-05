@@ -1,0 +1,19 @@
+@import "../reset-items.css";
+
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.chevron-up::before {
+  font: var(--fa-font-solid);
+  font-size: 0.8rem;
+  content: "\f077";
+}
+
+.chevron-down::before {
+  font: var(--fa-font-solid);
+  font-size: 0.8rem;
+  content: "\f078";
+}

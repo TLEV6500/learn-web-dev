@@ -1,0 +1,3 @@
+{
+  "extends": "@tlev/typescript-config/base"
+}

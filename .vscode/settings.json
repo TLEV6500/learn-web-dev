@@ -1,0 +1,19 @@
+{
+  // required in vscode-eslint < v3.0.10 only
+  "eslint.useFlatConfig": true,
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.restoreJointJsPlaygroundFiles",
+      "sequence": [
+        {
+          "command": "workbench.action.files.openFolder",
+          "args": "./apps/jointjs-playground"
+        },
+        {
+          "command": "workbench.action.localHistory.restore",
+          "args": "*"
+        }
+      ]
+    }
+  ]
+}

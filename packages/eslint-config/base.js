@@ -1,32 +1,32 @@
 import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import turboPlugin from "eslint-plugin-turbo";
 import tseslint from "typescript-eslint";
-import onlyWarn from "eslint-plugin-only-warn";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
+import turboPlugin from "eslint-plugin-turbo";
+// import onlyWarn from "eslint-plugin-only-warn";
+import globals from "globals";
 
-/**
- * A shared ESLint configuration for the repository.
- *
- * @type {import("eslint").Linter.Config[]}
- * */
-export const config = [
-  js.configs.recommended,
-  eslintConfigPrettier,
-  ...tseslint.configs.recommended,
-  {
-    plugins: {
-      turbo: turboPlugin,
+/** @type {import('eslint').Linter.FlatConfig[]} */
+export const baseConfig = [
+    // Start with recommended configs
+    js.configs.recommended,
+    ...tseslint.configs.recommended,
+
+    // Define plugins and rules for the whole monorepo
+    {
+        plugins: {
+            turbo: turboPlugin,
+            // onlyWarn,
+        },
+        rules: {
+            "turbo/no-undeclared-env-vars": "warn",
+        },
+        languageOptions: {
+            globals: {
+                ...globals.node, // Assumes a Node.js environment for most tooling
+            },
+        },
     },
-    rules: {
-      "turbo/no-undeclared-env-vars": "warn",
-    },
-  },
-  {
-    plugins: {
-      onlyWarn,
-    },
-  },
-  {
-    ignores: ["dist/**"],
-  },
 ];
+
+/** @type {import('eslint').Linter.FlatConfig} */
+export const prettierConfig = eslintConfigPrettier;

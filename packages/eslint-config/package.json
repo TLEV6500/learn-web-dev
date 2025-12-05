@@ -1,12 +1,13 @@
 {
-  "name": "@repo/eslint-config",
-  "version": "0.0.0",
+  "name": "@tlev/eslint-config",
+  "version": "0.0.1",
   "type": "module",
   "private": true,
   "exports": {
     "./base": "./base.js",
     "./next-js": "./next.js",
-    "./react-internal": "./react-internal.js"
+    "./react-internal": "./react-internal.js",
+    "./lit": "./lit.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",
@@ -19,6 +20,8 @@
     "eslint-plugin-turbo": "^2.5.0",
     "globals": "^16.3.0",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.40.0"
+    "typescript-eslint": "^8.40.0",
+    "eslint-plugin-lit": "^2.1.1",
+    "eslint-plugin-lit-a11y": "^5.1.1"
   }
 }

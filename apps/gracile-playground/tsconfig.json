@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "@tlev/typescript-config/lit.json",
+    "@gracile/gracile/tsconfigs/strictest"
+  ]
+}

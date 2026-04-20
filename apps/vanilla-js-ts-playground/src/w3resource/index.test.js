@@ -1,6 +1,3 @@
-import { items } from "./items";
+import { tests } from ".";
 
-for (const item of items) {
-  let [fn, test] = item();
-  test();
-}
+tests.forEach((test) => test());

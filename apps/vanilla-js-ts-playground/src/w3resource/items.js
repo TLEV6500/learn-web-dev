@@ -13,7 +13,7 @@ import { createFunctionTest } from "./test";
     console.log(is_array('w3resource')); // false
     console.log(is_array([1, 2, 4, 0])); // true
     ```
-    @returns {[fn:(...)=>any, executeTest: ()=>void]}
+    @returns {{name: string, fn:(...)=>any, executeTest: ()=>void}}
  */
 function item1() {
   function is_array(arr) {
@@ -25,7 +25,11 @@ function item1() {
     [true, [1, 2, 4, 0]],
   ];
 
-  return [is_array, createFunctionTest("item1", is_array, inputData)];
+  return {
+    name: "is_array",
+    fn: is_array,
+    executeTest: createFunctionTest("item1", is_array, inputData),
+  };
 }
 
 /**
@@ -37,7 +41,7 @@ function item1() {
         console.log(array_Clone([1, 2, 4, 0])); // [1, 2, 4, 0]
         console.log(array_Clone([1, 2, [4, 0]])); // [1, 2, [4, 0]]
     ```
-    @returns {[fn:(...)=>any, executeTest: ()=>void]}
+    @returns {{name: string, fn:(...)=>any, executeTest: ()=>void}}
  */
 function item2() {
   function array_clone(arr) {
@@ -51,7 +55,11 @@ function item2() {
     ["==", [1, 2, 4, 0]],
     ["==", [1, 2, [4, 0]]],
   ];
-  return [array_clone, createFunctionTest("item2", array_clone, testData)];
+  return {
+    name: "array_clone",
+    fn: array_clone,
+    executeTest: createFunctionTest("item2", array_clone, testData),
+  };
 }
 
 /**
@@ -66,7 +74,7 @@ function item2() {
     console.log(first([7, 9, 0, -2],6)); // [7, 9, 0, -2]
     console.log(first([7, 9, 0, -2],-3)); // []
     ```
-    @returns {[fn:(...)=>any, executeTest: ()=>void]}
+    @returns {{name: string, fn:(...)=>any, executeTest: ()=>void}}
  */
 function item3() {
   /**
@@ -89,7 +97,11 @@ function item3() {
     [[7, 9, 0, -2], [7, 9, 0, -2], 6],
     [[], [7, 9, 0, -2], -3],
   ];
-  return [first, createFunctionTest("item3", first, testData)];
+  return {
+    name: "first",
+    fn: first,
+    executeTest: createFunctionTest("item3", first, testData),
+  };
 }
 
 /**
@@ -102,7 +114,7 @@ function item3() {
     console.log(last([7, 9, 0, -2],3)); // [9, 0, -2]
     console.log(last([7, 9, 0, -2],6)); // [7, 9, 0, -2]
     ```
-    @returns {[fn:(...)=>any, executeTest: ()=>void]}
+    @returns {{name: string, fn:(...)=>any, executeTest: ()=>void}}
  */
 function item4() {
   /**
@@ -119,7 +131,11 @@ function item4() {
     [[9, 0, -2], [7, 9, 0, -2], 3],
     [[7, 9, 0, -2], [7, 9, 0, -2], 6],
   ];
-  return [last, createFunctionTest("item4", last, testData)];
+  return {
+    name: "last",
+    fn: last,
+    executeTest: createFunctionTest("item4", last, testData),
+  };
 }
 
 export const items = [item1, item2, item3, item4];

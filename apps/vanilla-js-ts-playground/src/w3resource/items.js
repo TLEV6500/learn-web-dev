@@ -1,4 +1,7 @@
 "use strict";
+
+// Exercises are from https://www.w3resource.com/javascript-exercises/javascript-array-exercises.php
+
 import { createFunctionTest } from "./test";
 
 /**
